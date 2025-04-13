@@ -53,4 +53,6 @@ target
 .project
 node_modules
 dist
+.metadata
+.sonarlint
 
