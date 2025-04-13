@@ -5,7 +5,7 @@ function createCrudApi(entityClass) {
   const router = express.Router();
   const repo = new BaseRepository(entityClass);
 
-  // GET /?criteria=...&limit=...&offset=...
+  //?criteria=...&limit=...&offset=...
   router.get('/', async (req, res) => {
     console.log(222);
     try { 
@@ -30,7 +30,6 @@ function createCrudApi(entityClass) {
     }
   });
 
-  // POST / (create)
   router.post('/', async (req, res) => {
     try {
       const entity = await repo.create(req.body);
@@ -40,7 +39,6 @@ function createCrudApi(entityClass) {
     }
   });
 
-  // PUT /:id (update)
   router.put('/:id', async (req, res) => {
     try {
       const updated = await repo.update(req.params.id, req.body);
@@ -50,7 +48,6 @@ function createCrudApi(entityClass) {
     }
   });
 
-  // DELETE /:id
   router.delete('/:id', async (req, res) => {
     try {
       await repo.delete(req.params.id);
