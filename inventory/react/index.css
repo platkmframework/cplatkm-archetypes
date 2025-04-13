@@ -1,0 +1,268 @@
+/* 
+  =====================================================
+   Variables de color y tipografía
+  =====================================================
+*/
+:root {
+  --color-primary: #4b9eca;   /* Color principal (azul parecido al de ChirpStack) */
+  --color-secondary: #f0f4f8; /* Fondo gris suave */
+  --color-accent: #f79009;    /* Color de acento (naranja) */
+  --color-text: #333333;      /* Color principal de texto */
+  --color-text-light: #666666;/* Color secundario de texto */
+  --color-white: #ffffff;
+  --border-radius: 4px;
+  --font-family-base: "Roboto", sans-serif;
+  --font-size-base: 16px;
+  --transition-base: 0.3s ease-in-out;
+}
+
+/* Reset / Normalizaciones básicas */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  color: var(--color-text);
+  background-color: var(--color-secondary);
+  line-height: 1.5;
+}
+
+/* 
+  =====================================================
+   Layout principal
+  =====================================================
+*/
+.app-container {
+  display: flex;
+  height: 100vh; /* Ajusta si requieres scroll */
+}
+
+/* Barra lateral (Sidebar) */
+.sidebar {
+  width: 240px;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+}
+
+.sidebar-logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+.sidebar-nav {
+  list-style: none;
+  width: 100%;
+}
+
+.sidebar-nav li {
+  margin-bottom: 1rem;
+}
+
+.sidebar-nav a {
+  color: var(--color-white);
+  text-decoration: none;
+  display: block;
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius);
+  transition: background-color var(--transition-base);
+}
+
+.sidebar-nav a:hover,
+.sidebar-nav a.active {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Contenido principal */
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header (parte superior del contenido) */
+.header {
+  background-color: var(--color-white);
+  border-bottom: 1px solid #e0e0e0;
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-title {
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.header-actions button {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background-color var(--transition-base);
+  font-size: 0.875rem;
+}
+
+.header-actions button:hover {
+  background-color: #3b7c9d; /* Un azul más oscuro */
+}
+
+/* Sección del contenido principal */
+.content-wrapper {
+  padding: 1.5rem;
+  background-color: var(--color-secondary);
+  flex: 1;
+  overflow-y: auto; /* Activar scroll si el contenido excede la altura */
+}
+
+/*
+  Tarjetas / Paneles (opcionales)
+*/
+.card {
+  background-color: var(--color-white);
+  border-radius: var(--border-radius);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.card-title {
+  font-size: 1.125rem;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.card-description {
+  font-size: 0.875rem;
+  color: var(--color-text-light);
+}
+
+/* 
+  Botones genéricos
+*/
+.btn {
+  display: inline-block;
+  padding: 0.6rem 1rem;
+  font-size: 0.875rem;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background-color var(--transition-base);
+  text-align: center;
+  text-decoration: none;
+  color: var(--color-white);
+  background-color: var(--color-primary);
+}
+
+.btn:hover {
+  background-color: #3b7c9d; /* Un azul más oscuro */
+}
+
+.btn-accent {
+  background-color: var(--color-accent);
+}
+
+.btn-accent:hover {
+  background-color: #dc8608; /* Naranja más oscuro */
+}
+
+/*
+  Formularios y campos de texto
+*/
+.form-group {
+  margin-bottom: 1rem;
+
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select,
+textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #cccccc;
+  border-radius: var(--border-radius);
+  font: inherit;
+  outline: none;
+  transition: border-color var(--transition-base);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--color-primary);
+}
+
+/* 
+  Tablas
+*/
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+}
+
+.table th,
+.table td {
+  text-align: left;
+  padding: 0.75rem;
+  border-bottom: 1px solid #e0e0e0;
+  font-size: 0.875rem;
+}
+
+.table thead {
+  background-color: var(--color-secondary);
+}
+
+.table tr:hover {
+  background-color: #f9f9f9;
+}
+
+/* 
+  Estados / Alertas
+*/
+.alert {
+  padding: 0.75rem 1rem;
+  border-radius: var(--border-radius);
+  margin-bottom: 1rem;
+  font-size: 0.875rem;
+}
+
+.alert-success {
+  background-color: #d1f7d1;
+  color: #2d6a2d;
+}
+
+.alert-error {
+  background-color: #ffd4d4;
+  color: #9e1c1c;
+}
+
+/*
+  Otros
+*/
+.text-muted {
+  color: var(--color-text-light);
+}
+
+.text-center {
+  text-align: center;
+}
